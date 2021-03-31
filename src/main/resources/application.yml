@@ -1,3 +1,11 @@
 server:
   port: 8080
   context-path: /
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: myRedis
+    database: 0
+logging:
+  level: debug
