@@ -7,5 +7,3 @@ spring:
     port: 6379
     password: myRedis
     database: 0
-logging:
-  level: debug
