@@ -1,9 +1,22 @@
 server:
   port: 8080
   context-path: /
+
 spring:
   redis:
     host: 127.0.0.1
     port: 6379
     password: myRedis
     database: 0
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    max-idle: 10
+    max-wait: 10000
+    min-idle: 5
+
+  thymeleaf:
+    cache: false

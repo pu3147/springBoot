@@ -1,6 +1,8 @@
 package cc.fbksy.edu.springBoot.user.service;
 
 import cc.fbksy.edu.springBoot.user.ao.UserAo;
+import cc.fbksy.edu.springBoot.user.mapper.UserMapper;
+import cc.fbksy.edu.springBoot.user.mapper.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -12,10 +14,17 @@ public class UserManager {
     @Autowired
     private StringRedisTemplate template;
 
+    @Autowired
+    private UserMapper userMapper;
+
     public  UserAo login(UserAo loginInfo){
 
         if(template.opsForHash().hasKey("userLoginName",loginInfo.getLoginName())){
+            return loginInfo;
+        }
 
+        UserEntity userEntity = userMapper.getUserByCode(loginInfo.getLoginName());
+        if(null != userEntity){
             return loginInfo;
         }
 

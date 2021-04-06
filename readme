@@ -1,0 +1,10 @@
+create database demo;
+use demo;
+CREATE TABLE t_mem_user (
+  user_id int NOT NULL AUTO_INCREMENT COMMENT 'user id',
+  user_name varchar(255) DEFAULT NULL COMMENT '用户名称',
+  PRIMARY KEY (user_id)
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+
+
+http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/

@@ -17,7 +17,7 @@ public class UserController {
 
     @PostMapping(value = "/login")
     @ResponseBody
-    public UserAo doLogin(@RequestBody UserAo loinInfo){
+    public UserAo doLogin(UserAo loinInfo){
         return  userManager.login(loinInfo);
     }
 
