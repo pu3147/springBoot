@@ -3,7 +3,9 @@ package cc.fbksy.edu.springBoot.user.service;
 import cc.fbksy.edu.springBoot.user.ao.UserAo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserManager {
 
 
