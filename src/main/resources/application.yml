@@ -4,14 +4,14 @@ server:
 
 spring:
   redis:
-    host: 127.0.0.1
+    host: edu.fbksy.org
     port: 6379
-    password: myRedis
+    password: 1qaz@WSX
     database: 0
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/demo
-    username: root
+    url: jdbc:mysql://edu.fbksy.org:3306/demo
+    username: pu3147
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     max-idle: 10
