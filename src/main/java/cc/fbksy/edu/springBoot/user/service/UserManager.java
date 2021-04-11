@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
 public class UserManager {
 
@@ -24,6 +27,11 @@ public class UserManager {
         }
 
         UserEntity userEntity = userMapper.getUserByCode(loginInfo.getLoginName());
+
+        Map<String,Object> paramMap = new HashMap<String,Object>(2);
+        paramMap.put("loginName",loginInfo.getLoginName());
+        int size = userMapper.countTotal(paramMap);
+
         if(null != userEntity){
             return loginInfo;
         }

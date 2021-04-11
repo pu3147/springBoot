@@ -21,4 +21,5 @@ spring:
   thymeleaf:
     cache: false
 mybatis:
-  mapper-locations: classpath:cc/**/mapper/*.xml
+  #mapper-locations: classpath:cc/**/*Mapper.xml
+  mapper-locations: classpath:mapping/*Mapper.xml
