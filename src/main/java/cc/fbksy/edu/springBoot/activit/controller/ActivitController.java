@@ -53,7 +53,7 @@ public class ActivitController {
         return "SUCCESS";
     }
 
-    @PostMapping("/act/queryHistoryTask")
+    @PostMapping("/act/queryMYTask")
     public Object queryMYTask(@RequestBody CompleteTaskVo completeTaskVo){
 
         //查询条件,办理人或委托人
@@ -61,6 +61,17 @@ public class ActivitController {
 
         //查询条件,s委托人组
         List<Task> list2 = taskService.createTaskQuery().taskCandidateGroupIn(Arrays.asList()).list();
+
+        return "SUCCESS";
+    }
+
+    @PostMapping("/act/myTaskDetail")
+    public Object myTaskDetail(@RequestBody CompleteTaskVo completeTaskVo){
+
+        //查询条件,办理人或委托人
+        Task task = taskService.createTaskQuery().taskId(completeTaskVo.getTaskId()).singleResult();
+
+        task.getTaskLocalVariables();
 
         return "SUCCESS";
     }

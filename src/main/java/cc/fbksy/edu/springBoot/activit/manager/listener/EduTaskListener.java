@@ -33,6 +33,16 @@ public class EduTaskListener  implements TaskListener {
 
         //获取流程id
         String exId = delegateTask.getExecutionId();
+        String taskId = delegateTask.getId();
+
+        // Sid delegateTask.getTaskDefinitionKey()
+        // FlowId delegateTask.getExecution().getProcessDefinitionId()
+
+        if("create".equals(eventName)) {
+            taskService.addCandidateUser(taskId,"userId");
+            taskService.addCandidateGroup(taskId,"groupCode");
+        }
+
         if("comple".equals(eventName)) {
             boolean pass = runtimeService.getVariable(exId, "pass", Boolean.class);
             if (pass) {
