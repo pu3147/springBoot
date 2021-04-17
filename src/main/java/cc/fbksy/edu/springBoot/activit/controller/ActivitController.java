@@ -76,6 +76,15 @@ public class ActivitController {
         return "SUCCESS";
     }
 
+    @PostMapping("/act/claimTask")
+    public Object claimTask(@RequestBody CompleteTaskVo completeTaskVo){
+
+        //认领任务（对应的是在组任务，即从组任务中领取任务）
+        taskService.claim(completeTaskVo.getTaskId(),completeTaskVo.getUserId());
+
+        return "SUCCESS";
+    }
+
     @PostMapping("/act/queryHistoryTask")
     public Object queryHistoryTask(@RequestBody CompleteTaskVo completeTaskVo){
 

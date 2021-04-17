@@ -41,6 +41,7 @@ public class EduTaskListener  implements TaskListener {
         if("create".equals(eventName)) {
             taskService.addCandidateUser(taskId,"userId");
             taskService.addCandidateGroup(taskId,"groupCode");
+            taskService.setAssignee(taskId,"userId");
         }
 
         if("comple".equals(eventName)) {
