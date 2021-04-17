@@ -20,7 +20,7 @@ spring:
     async-executor-enabled: false
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/demo
+    url: jdbc:mysql://edu.fbksy.org:3306/db_activiti?serverTimezone=UTC
     username: pu3147
     password: 1qaz@WSX
     driver-class-name: com.mysql.jdbc.Driver
