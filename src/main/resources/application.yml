@@ -16,7 +16,6 @@ spring:
     db-history-used: true
     #表示哪种情况下使用历史表，这里配置为full表示全部记录历史，方便绘制流程图
     history-level: full
-
     async-executor-enabled: false
 
   datasource:
